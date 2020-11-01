@@ -2,6 +2,9 @@ package com.adrianbadarau
 
 import com.adrianbadarau.config.DIContainer
 import com.adrianbadarau.controllers.inventoryRoutes
+import com.adrianbadarau.controllers.productRoutes
+import com.adrianbadarau.controllers.shoppingRoutes
+import com.adrianbadarau.controllers.uploadRoutes
 import com.adrianbadarau.dto.InventoryGetResponse
 import com.adrianbadarau.dto.ProductsGetResponse
 import com.adrianbadarau.models.InventoryItem
@@ -46,6 +49,9 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
         inventoryRoutes(diContainer)
+        productRoutes(diContainer = diContainer)
+        shoppingRoutes(diContainer)
+        uploadRoutes(diContainer)
     }
 }
 
