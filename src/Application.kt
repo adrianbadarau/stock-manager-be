@@ -1,6 +1,7 @@
 package com.adrianbadarau
 
 import com.adrianbadarau.config.DIContainer
+import com.adrianbadarau.controllers.inventoryRoutes
 import com.adrianbadarau.dto.InventoryGetResponse
 import com.adrianbadarau.dto.ProductsGetResponse
 import com.adrianbadarau.models.InventoryItem
@@ -44,13 +45,7 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
-        get("/") {
-            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
-        }
-
-        get("/json/jackson") {
-            call.respond(mapOf("hello" to "world"))
-        }
+        inventoryRoutes(diContainer)
     }
 }
 
