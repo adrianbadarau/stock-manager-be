@@ -1,1 +1,1 @@
-rootProject.name = "ikea_demo"
+rootProject.name = "ikea_homework"
